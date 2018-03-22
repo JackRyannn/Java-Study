@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+       <bean id="user" class="User">
+              <property name="name" value="chz"></property>
+              <!-- 自动装配，根据构造函数可以自己寻找所需的对象-->
+              <!--<bean id="user" class="User" autowire="constructor">-->
+              <!-- 自动装配，根据名称可以自己寻找所需的对象-->
+              <!--<bean id="user" class="User" autowire="byName">-->
+              <!-- 自动装配，根据class类型可以自己寻找所需的对象，如找到多个则报错-->
+              <!--<bean id="user" class="User" autowire="byType">-->
+              <!-- 基于构造函数的注入-->
+              <!--<constructor-arg ref="cloth"></constructor-arg>-->
+              <!-- 基于setter方法的注入-->
+              <!--<property name="cloth" ref="cloth"></property>-->
+              <!-- 内部创建bean并注入-->
+              <!--<property name="cloth">-->
+                     <!--<bean id="cloth" class="Cloth">-->
+                            <!--<property name="name" value="Adidas"></property>-->
+                     <!--</bean>-->
+              <!--</property>-->
+
+       </bean>
+       <bean id="cloth" class="Cloth">
+              <property name="name" value="nike"></property>
+       </bean>
+
+
+</beans>
